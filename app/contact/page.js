@@ -1,7 +1,5 @@
 
 import React from "react";
-import Link from "next/link";
-import { Mail, MessageCircle, ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -33,11 +31,12 @@ const Contact = () => {
           <div className="flex flex-col items-center gap-5 text-center">
 
             {/* Mail Icon */}
-            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gray-900 text-white shadow-lg">
-              <Mail size={30} strokeWidth={1.8} />
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gray-900 text-3xl text-white shadow-lg">
+              ✉
             </div>
 
             <div className="flex flex-col gap-2">
+
               <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
                 Drop us an email
               </h2>
@@ -46,6 +45,7 @@ const Contact = () => {
                 Whether it's a question, feedback, or a suggestion,
                 our inbox is always open.
               </p>
+
             </div>
 
             {/* Email Address */}
@@ -54,10 +54,11 @@ const Contact = () => {
               className="group flex max-w-full items-center gap-2 break-all rounded-xl bg-gray-100 px-4 py-3 text-sm font-semibold text-gray-800 transition-all hover:bg-gray-200 sm:text-lg"
             >
               <span>damanstudyonly@gmail.com</span>
-              <ArrowUpRight
-                size={20}
-                className="shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
-              />
+
+              <span className="shrink-0 text-xl transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
+                ↗
+              </span>
+
             </a>
 
             {/* Contact Button */}
@@ -65,8 +66,9 @@ const Contact = () => {
               href="mailto:damanstudyonly@gmail.com?subject=Hello%20Linkly"
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-gray-900 px-7 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gray-700 hover:shadow-xl active:scale-95"
             >
-              <MessageCircle size={19} />
+              <span className="text-lg">✉</span>
               Send us a message
+              <span>→</span>
             </a>
 
           </div>
