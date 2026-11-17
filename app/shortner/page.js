@@ -3,7 +3,6 @@
 
 import React, { useState } from "react";
 import Btn from "../components/Btn";
-import { Link2, Copy, Check, Sparkles, ArrowUpRight } from "lucide-react";
 
 const Shortner = () => {
   const [url, setUrl] = useState("");
@@ -26,6 +25,7 @@ const Shortner = () => {
       return;
     }
 
+    // Validate URL
     try {
       const parsedUrl = new URL(url.trim());
 
@@ -70,7 +70,7 @@ const Shortner = () => {
     }
   };
 
-  // Copy Generated URL
+  // Copy URL
   const CopyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(generated);
@@ -92,12 +92,12 @@ const Shortner = () => {
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">
 
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gray-800 text-white shadow-lg">
-            <Link2 size={28} />
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gray-800 text-3xl text-white shadow-lg">
+            🔗
           </div>
 
           <div className="flex items-center gap-2">
-            <Sparkles size={17} className="text-gray-600" />
+            <span className="text-lg text-gray-600">✦</span>
 
             <span className="text-sm font-semibold uppercase tracking-widest text-gray-600">
               Linkly URL Shortener
@@ -120,7 +120,10 @@ const Shortner = () => {
           {/* Original URL */}
           <div className="flex flex-col gap-2">
 
-            <label htmlFor="original-url" className="text-sm font-semibold text-gray-800">
+            <label
+              htmlFor="original-url"
+              className="text-sm font-semibold text-gray-800"
+            >
               Destination URL
             </label>
 
@@ -139,14 +142,20 @@ const Shortner = () => {
           {/* Custom Alias */}
           <div className="flex flex-col gap-2">
 
-            <label htmlFor="custom-alias" className="text-sm font-semibold text-gray-800">
+            <label
+              htmlFor="custom-alias"
+              className="text-sm font-semibold text-gray-800"
+            >
               Custom Alias
             </label>
 
-            <div className="flex items-center overflow-hidden rounded-xl border border-gray-300 bg-white focus-within:border-gray-600 focus-within:ring-2 focus-within:ring-gray-400/30">
+            <div className="flex min-w-0 items-center overflow-hidden rounded-xl border border-gray-300 bg-white focus-within:border-gray-600 focus-within:ring-2 focus-within:ring-gray-400/30">
 
               <span className="whitespace-nowrap border-r border-gray-200 bg-gray-100 px-3 py-3 text-xs text-gray-500 sm:text-sm">
-                {typeof window !== "undefined" ? window.location.host : "linkly.com"}/
+                {typeof window !== "undefined"
+                  ? window.location.host
+                  : "linkly.com"}
+                /
               </span>
 
               <input
@@ -169,7 +178,10 @@ const Shortner = () => {
 
           {/* Error Message */}
           {error && (
-            <p role="alert" className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+            <p
+              role="alert"
+              className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600"
+            >
               {error}
             </p>
           )}
@@ -190,11 +202,15 @@ const Shortner = () => {
           <div className="flex flex-col gap-4 rounded-2xl border border-gray-300 bg-white p-4 sm:p-5">
 
             <div className="flex items-center gap-2">
-              <Check size={19} className="text-green-600" />
+
+              <span className="text-xl font-bold text-green-600">
+                ✓
+              </span>
 
               <h2 className="font-semibold text-gray-800">
                 Your link is ready!
               </h2>
+
             </div>
 
             <div className="flex min-w-0 items-center gap-2">
@@ -212,15 +228,17 @@ const Shortner = () => {
                 type="button"
                 onClick={CopyToClipboard}
                 aria-label="Copy shortened link"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gray-800 text-white transition-all hover:bg-gray-700 active:scale-95"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gray-800 text-xl text-white transition-all hover:bg-gray-700 active:scale-95"
               >
-                {copied ? <Check size={19} /> : <Copy size={19} />}
+                {copied ? "✓" : "📋"}
               </button>
 
             </div>
 
             <p className="text-xs text-gray-500">
-              {copied ? "Link copied to clipboard!" : "Your shortened link is ready to share."}
+              {copied
+                ? "Link copied to clipboard!"
+                : "Your shortened link is ready to share."}
             </p>
 
           </div>
