@@ -97,7 +97,6 @@ const Shortner = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-lg text-gray-600">✦</span>
 
             <span className="text-sm font-semibold uppercase tracking-widest text-gray-600">
               Linkly URL Shortener
