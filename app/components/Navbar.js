@@ -49,7 +49,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="https://github.com/HULK-CODDER"
+              href="https://github.com/DXMAN-45"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -108,7 +108,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="https://github.com/HULK-CODDER"
+              href="https://github.com/DXMAN-45"
               target="_blank"
               rel="noopener noreferrer"
             >
